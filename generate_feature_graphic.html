@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Play Store Feature Graphic</title>
+</head>
+<body>
+    <h2>Play Store Feature Graphic Generator (1024x500)</h2>
+    <canvas id="featureCanvas" width="1024" height="500"></canvas>
+    <br><br>
+    <button onclick="downloadGraphic()">Download Feature Graphic PNG</button>
+    
+    <script>
+        const canvas = document.getElementById('featureCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Draw WhatsApp green background
+        ctx.fillStyle = '#25D366';
+        ctx.fillRect(0, 0, 1024, 500);
+        
+        // Draw white chat bubble on the left side - adjusted size
+        ctx.fillStyle = '#FFFFFF';
+        const bubbleX = 120;
+        const bubbleY = 150;
+        const bubbleWidth = 180;
+        const bubbleHeight = 180;
+        const radius = 20;
+        
+        // Rounded rectangle for bubble
+        ctx.beginPath();
+        ctx.moveTo(bubbleX + radius, bubbleY);
+        ctx.lineTo(bubbleX + bubbleWidth - radius, bubbleY);
+        ctx.quadraticCurveTo(bubbleX + bubbleWidth, bubbleY, bubbleX + bubbleWidth, bubbleY + radius);
+        ctx.lineTo(bubbleX + bubbleWidth, bubbleY + bubbleHeight - radius);
+        ctx.quadraticCurveTo(bubbleX + bubbleWidth, bubbleY + bubbleHeight, bubbleX + bubbleWidth - radius, bubbleY + bubbleHeight);
+        ctx.lineTo(bubbleX + radius, bubbleY + bubbleHeight);
+        ctx.quadraticCurveTo(bubbleX, bubbleY + bubbleHeight, bubbleX, bubbleY + bubbleHeight - radius);
+        ctx.lineTo(bubbleX, bubbleY + radius);
+        ctx.quadraticCurveTo(bubbleX, bubbleY, bubbleX + radius, bubbleY);
+        ctx.closePath();
+        ctx.fill();
+        
+        // Draw tail/pointer on left - adjusted for smaller bubble
+        ctx.beginPath();
+        ctx.moveTo(bubbleX, bubbleY + 70);
+        ctx.lineTo(bubbleX - 25, bubbleY + 85);
+        ctx.lineTo(bubbleX, bubbleY + 100);
+        ctx.closePath();
+        ctx.fill();
+        
+        // Draw message lines inside bubble - adjusted for smaller bubble
+        ctx.fillStyle = '#25D366';
+        const lineX = bubbleX + 25;
+        const lineY1 = bubbleY + 45;
+        const lineY2 = bubbleY + 70;
+        const lineY3 = bubbleY + 95;
+        const lineWidth1 = 130;
+        const lineWidth2 = 130;
+        const lineWidth3 = 85;
+        const lineHeight = 12;
+        
+        function drawRoundedRect(x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+            ctx.fill();
+        }
+        
+        drawRoundedRect(lineX, lineY1, lineWidth1, lineHeight, 7);
+        drawRoundedRect(lineX, lineY2, lineWidth2, lineHeight, 7);
+        drawRoundedRect(lineX, lineY3, lineWidth3, lineHeight, 7);
+        
+        // Draw app name text - adjusted to fit within frame
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 48px Arial, sans-serif';
+        ctx.textAlign = 'left';
+        ctx.textBaseline = 'top';
+        
+        const textX = 400;
+        const textY = 150;
+        const appName = 'WhatsApp Message Sender';
+        
+        // Split text into three lines to fit better
+        const line1 = 'WhatsApp';
+        const line2 = 'Message';
+        const line3 = 'Sender';
+        
+        ctx.fillText(line1, textX, textY);
+        ctx.fillText(line2, textX, textY + 55);
+        ctx.fillText(line3, textX, textY + 110);
+        
+        // Draw tagline - smaller font and adjusted position
+        ctx.fillStyle = '#E8F5E9';
+        ctx.font = '28px Arial, sans-serif';
+        const tagline = 'Send messages without saving contacts';
+        ctx.fillText(tagline, textX, textY + 180);
+        
+        function downloadGraphic() {
+            const link = document.createElement('a');
+            link.download = 'play_store_feature_graphic_1024x500.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>

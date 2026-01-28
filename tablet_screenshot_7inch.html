@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Message Sender - 7-inch Tablet Screenshot</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        /* 7-inch tablet frame - Portrait orientation */
+        .tablet-frame {
+            width: 600px;
+            height: 960px;
+            background: #1a1a1a;
+            border-radius: 40px;
+            padding: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            position: relative;
+        }
+
+        .tablet-screen {
+            width: 100%;
+            height: 100%;
+            background: #F5F5F5;
+            border-radius: 30px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Status bar */
+        .status-bar {
+            height: 24px;
+            background: #6200EE;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 16px;
+            color: white;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        /* App content */
+        .app-content {
+            padding: 48px 32px;
+            height: calc(100% - 24px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .app-title {
+            font-size: 36px;
+            font-weight: bold;
+            color: #333333;
+            text-align: center;
+            margin-bottom: 12px;
+        }
+
+        .app-subtitle {
+            font-size: 18px;
+            color: #666666;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .input-group {
+            margin-bottom: 24px;
+        }
+
+        .input-label {
+            font-size: 14px;
+            color: #666666;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 16px;
+            border: 2px solid #E0E0E0;
+            border-radius: 8px;
+            font-size: 16px;
+            background: white;
+            color: #333333;
+            transition: border-color 0.3s;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #6200EE;
+        }
+
+        .input-field::placeholder {
+            color: #999999;
+        }
+
+        .message-input {
+            min-height: 120px;
+            resize: vertical;
+            font-family: inherit;
+        }
+
+        .send-button {
+            width: 100%;
+            padding: 18px;
+            background: #6200EE;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 32px;
+            box-shadow: 0 4px 12px rgba(98, 0, 238, 0.3);
+            transition: background 0.3s, transform 0.1s;
+        }
+
+        .send-button:hover {
+            background: #3700B3;
+        }
+
+        .send-button:active {
+            transform: scale(0.98);
+        }
+
+        /* WhatsApp icon decoration */
+        .whatsapp-icon {
+            width: 80px;
+            height: 80px;
+            background: #25D366;
+            border-radius: 50%;
+            margin: 0 auto 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-icon::before {
+            content: "💬";
+            font-size: 40px;
+        }
+
+        /* Feature highlights */
+        .features {
+            margin-top: 32px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .feature-badge {
+            background: rgba(98, 0, 238, 0.1);
+            color: #6200EE;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .tablet-frame {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="tablet-frame">
+        <div class="tablet-screen">
+            <!-- Status Bar -->
+            <div class="status-bar">
+                <span>9:41</span>
+                <span>📶 📶 📶 🔋</span>
+            </div>
+
+            <!-- App Content -->
+            <div class="app-content">
+                <!-- WhatsApp Icon -->
+                <div class="whatsapp-icon"></div>
+
+                <!-- App Title -->
+                <h1 class="app-title">WhatsApp Message Sender</h1>
+                <p class="app-subtitle">Send messages without saving contacts</p>
+
+                <!-- Country Code Input -->
+                <div class="input-group">
+                    <div class="input-label">Country Code</div>
+                    <input type="text" class="input-field" value="+91" placeholder="Country Code">
+                </div>
+
+                <!-- Phone Number Input -->
+                <div class="input-group">
+                    <div class="input-label">Phone Number</div>
+                    <input type="tel" class="input-field" value="9876543210" placeholder="Phone Number">
+                </div>
+
+                <!-- Message Input -->
+                <div class="input-group">
+                    <div class="input-label">Message (Optional)</div>
+                    <textarea class="input-field message-input" placeholder="Type your message here...">Hello! This is a test message.</textarea>
+                </div>
+
+                <!-- Send Button -->
+                <button class="send-button">Send Message</button>
+
+                <!-- Feature Badges -->
+                <div class="features">
+                    <span class="feature-badge">✓ No Permissions</span>
+                    <span class="feature-badge">✓ Offline</span>
+                    <span class="feature-badge">✓ Privacy First</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

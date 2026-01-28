@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Play Store Icon</title>
+</head>
+<body>
+    <h2>Play Store Icon Generator (512x512)</h2>
+    <canvas id="iconCanvas" width="512" height="512"></canvas>
+    <br><br>
+    <button onclick="downloadIcon()">Download PNG Icon</button>
+    
+    <script>
+        const canvas = document.getElementById('iconCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // Draw WhatsApp green background
+        ctx.fillStyle = '#25D366';
+        ctx.fillRect(0, 0, 512, 512);
+        
+        // Draw white chat bubble
+        ctx.fillStyle = '#FFFFFF';
+        ctx.beginPath();
+        // Main bubble (rounded rectangle)
+        const bubbleX = 120;
+        const bubbleY = 180;
+        const bubbleWidth = 292;
+        const bubbleHeight = 152;
+        const radius = 20;
+        
+        // Rounded rectangle
+        ctx.moveTo(bubbleX + radius, bubbleY);
+        ctx.lineTo(bubbleX + bubbleWidth - radius, bubbleY);
+        ctx.quadraticCurveTo(bubbleX + bubbleWidth, bubbleY, bubbleX + bubbleWidth, bubbleY + radius);
+        ctx.lineTo(bubbleX + bubbleWidth, bubbleY + bubbleHeight - radius);
+        ctx.quadraticCurveTo(bubbleX + bubbleWidth, bubbleY + bubbleHeight, bubbleX + bubbleWidth - radius, bubbleY + bubbleHeight);
+        ctx.lineTo(bubbleX + radius, bubbleY + bubbleHeight);
+        ctx.quadraticCurveTo(bubbleX, bubbleY + bubbleHeight, bubbleX, bubbleY + bubbleHeight - radius);
+        ctx.lineTo(bubbleX, bubbleY + radius);
+        ctx.quadraticCurveTo(bubbleX, bubbleY, bubbleX + radius, bubbleY);
+        ctx.closePath();
+        ctx.fill();
+        
+        // Draw tail/pointer on left
+        ctx.beginPath();
+        ctx.moveTo(bubbleX, bubbleY + 60);
+        ctx.lineTo(bubbleX - 20, bubbleY + 80);
+        ctx.lineTo(bubbleX, bubbleY + 100);
+        ctx.closePath();
+        ctx.fill();
+        
+        // Draw message lines inside bubble
+        ctx.fillStyle = '#25D366';
+        const lineX = 150;
+        const lineY1 = 220;
+        const lineY2 = 240;
+        const lineY3 = 260;
+        const lineWidth1 = 212;
+        const lineWidth2 = 212;
+        const lineWidth3 = 142;
+        const lineHeight = 12;
+        
+        // Rounded rectangles for lines
+        function drawRoundedRect(x, y, width, height, radius) {
+            ctx.beginPath();
+            ctx.moveTo(x + radius, y);
+            ctx.lineTo(x + width - radius, y);
+            ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+            ctx.lineTo(x + width, y + height - radius);
+            ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+            ctx.lineTo(x + radius, y + height);
+            ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+            ctx.lineTo(x, y + radius);
+            ctx.quadraticCurveTo(x, y, x + radius, y);
+            ctx.closePath();
+            ctx.fill();
+        }
+        
+        drawRoundedRect(lineX, lineY1, lineWidth1, lineHeight, 6);
+        drawRoundedRect(lineX, lineY2, lineWidth2, lineHeight, 6);
+        drawRoundedRect(lineX, lineY3, lineWidth3, lineHeight, 6);
+        
+        function downloadIcon() {
+            const link = document.createElement('a');
+            link.download = 'play_store_icon_512x512.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+    </script>
+</body>
+</html>
