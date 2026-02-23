@@ -1,65 +1,90 @@
-# Privacy Policy for WhatsApp Message Sender
+# Privacy Policy for Quick Chat Message
 
-**Last Updated:** 28/012026
+**Last Updated:** February 22, 2026
 
 ## Introduction
 
-WhatsApp Message Sender ("we", "our", or "the app") is committed to protecting your privacy. This Privacy Policy explains how we handle information when you use our mobile application.
+Quick Chat Message ("we", "our", or "the App") is committed to protecting your privacy.  
+This Privacy Policy explains how we handle information when you use our Android application published on Google Play.
 
-## Information We Collect
+By using Quick Chat Message, you agree to the practices described in this Privacy Policy.
 
-**We do NOT collect, store, or transmit any personal information.**
+> **Note:** Quick Chat Message is an independent tool. It is **not** affiliated with, endorsed by, or officially connected to WhatsApp or Meta Platforms, Inc. in any way.
 
-Our app:
-- Does NOT require user registration or login
-- Does NOT collect phone numbers
-- Does NOT collect messages
-- Does NOT collect location data
-- Does NOT collect device information
-- Does NOT use analytics or tracking
-- Does NOT use cookies or similar technologies
+---
+
+## Information We Handle
+
+### 1. Phone Numbers and Messages You Enter
+
+When you use the App, you can enter:
+
+- A **phone number**
+- An optional **message text**
+
+This information is used **only on your device** to:
+
+- Construct a WhatsApp deep link URL (e.g., `https://wa.me/{phone_number}?text={message}`)
+- Open WhatsApp (or another supported app) via Android Intent so you can send a message
+
+**We do NOT:**
+
+- Collect phone numbers or messages on our own servers  
+- Store phone numbers or messages on our servers (we do not operate any backend server)  
+- Sell, rent, or share phone numbers or messages with third parties
+
+All processing related to the phone number and message happens **locally on your device**, and then the data is passed directly to WhatsApp (or another messaging app) when you tap send.
+
+### 2. Other Personal Data
+
+Aside from the phone number and message you explicitly type, the App:
+
+- Does **NOT** require user registration or login  
+- Does **NOT** collect your contacts  
+- Does **NOT** collect location data  
+- Does **NOT** collect device identifiers or analytics data  
+- Does **NOT** use cookies or similar tracking technologies  
+
+---
 
 ## How We Use Information
 
-Since we do not collect any information, there is no information to use or share.
+Because we do not collect or store your data on our servers, our use of information is limited to:
+
+- Building a deep link URL on your device using the phone number and optional message you provide  
+- Launching WhatsApp (or another compatible app) using that URL so you can send a message
+
+We do **not** use this information for analytics, advertising, profiling, or any other purpose.
+
+---
 
 ## Data Storage
 
-**All data processing happens locally on your device.**
+- All data processing (phone number and message) happens **locally** on your device.  
+- We do **not** store this data on external servers.  
+- We do **not** create any permanent database of your inputs.  
+- Once you close the App or clear the fields, the phone number and message you entered are no longer available inside the App.
 
-- Phone numbers and messages are entered by you
-- All processing happens on your device
-- No data is sent to any server
-- No data is stored on your device
-- No data is backed up to cloud services
+Any subsequent storage or logging of data is handled by WhatsApp or other messaging apps according to **their own** privacy policies.
+
+---
 
 ## Third-Party Services
 
-Our app uses the official WhatsApp deep link API (`https://wa.me/`) to open WhatsApp. When you click "Send Message", the app opens WhatsApp on your device. We do not have access to:
-- Your WhatsApp contacts
-- Your WhatsApp messages
-- Your WhatsApp account information
+Quick Chat Message uses the official WhatsApp deep link mechanism (`https://wa.me/`) and Android intents to open WhatsApp (or other supported apps) on your device.
+
+When you choose to send a message:
+
+- The phone number and optional message you entered are passed to WhatsApp (or another messaging app) on your device.
+- That data is then handled under **WhatsApp’s** or the respective app’s privacy policy, not ours.
+
+We do **not** control how WhatsApp or other apps process your data.  
+Please review WhatsApp’s and any other messaging app’s own privacy policy for more details on their data practices.
+
+---
 
 ## Permissions
 
-Our app does NOT request any permissions. We only use Android Intents to open WhatsApp, which does not require special permissions.
+The App aims to be lightweight and privacy friendly:
 
-## Children's Privacy
-
-Our app does not knowingly collect information from children under 13. Since we do not collect any information, this is not applicable.
-
-## Changes to This Privacy Policy
-
-We may update this Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date.
-
-## Contact Us
-
-If you have any questions about this Privacy Policy, please contact us at:
-- Email: bansalcoding500@gmail.com
-
-## Compliance
-
-This app complies with:
-- General Data Protection Regulation (GDPR)
-- California Consumer Privacy Act (CCPA)
-- Google Play Store Privacy Policy requirements
+- The App does **NOT** request sensitive runtime permissions like access to Contacts, SMS,
